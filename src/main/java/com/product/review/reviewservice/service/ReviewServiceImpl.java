@@ -20,7 +20,7 @@ public class ReviewServiceImpl implements ReviewService {
     @Override
     public Iterable<Review> findProductReviews(int product_id) {
 
-        return null;
+        return reviewServiceDao.findByProductId(product_id);
     }
 
     @Override

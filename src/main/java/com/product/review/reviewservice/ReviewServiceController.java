@@ -77,6 +77,15 @@ public class ReviewServiceController {
         }
         return reviewEntity;
     }
+/*
+    @Autowired
+    private DiscoveryClient discoveryClient;
+
+    @RequestMapping("/service-instances/{applicationName}")
+    public List<ServiceInstance> serviceInstancesByApplicationName(
+            @PathVariable String applicationName) {
+        return this.discoveryClient.getInstances(applicationName);
+    }*/
 private Review convertToEntity(ReviewDto reviewDto){
           return modelMapper.map(reviewDto,Review.class);
 }
