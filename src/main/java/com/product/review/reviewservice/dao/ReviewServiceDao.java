@@ -13,6 +13,6 @@ import java.util.stream.Stream;
 public interface  ReviewServiceDao extends CrudRepository<Review, Long> {
 
     @Query("select r from Review r where r.productId=:productId")
-    List<Review> findByProductId(@Param("productId") int productId);
+    List<Review> findByProductId(@Param("productId") Long productId);
 
 }

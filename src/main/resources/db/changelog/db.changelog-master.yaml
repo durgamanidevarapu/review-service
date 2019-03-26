@@ -28,3 +28,11 @@ databaseChangeLog:
                   type: int
                   constraints:
                     nullable: false
+    -changeSet:
+      id: 2
+      author: durga
+      changes:
+        - modifyDataType:
+          columnName: product_id
+          newDataType: BIGINT
+          tableName: review

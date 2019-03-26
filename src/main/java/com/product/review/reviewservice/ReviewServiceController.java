@@ -28,7 +28,7 @@ public class ReviewServiceController {
     ModelMapper modelMapper = new ModelMapper();
 
     @PostMapping("/products/{productId}/reviews")
-    public ResponseEntity<Object> addReview(@RequestBody ReviewDto reviewDto, @PathVariable int productId){
+    public ResponseEntity<Object> addReview(@RequestBody ReviewDto reviewDto, @PathVariable Long productId){
         Review review = convertToEntity(reviewDto);
         review.setProductId(productId);
         Review savedReview  = reviewService.addProdcutReview(review);
@@ -44,7 +44,7 @@ public class ReviewServiceController {
     }
 
     @GetMapping("/{productId}/reviews")
-    public List<Review> getProductReview(@PathVariable int productId){
+    public List<Review> getProductReview(@PathVariable Long productId){
         Iterable<Review> reviews = reviewService.findProductReviews(productId);
         List<Review> reviewList = new ArrayList<>();
         reviews.forEach(reviewList::add);
@@ -53,7 +53,7 @@ public class ReviewServiceController {
     }
 
     @PutMapping("/{productId}/reviews/{reviewId}")
-    public ResponseEntity<Object> updateProductReview(@RequestBody ReviewDto reviewDto, @PathVariable int productId, @PathVariable Long reviewId)
+    public ResponseEntity<Object> updateProductReview(@RequestBody ReviewDto reviewDto, @PathVariable Long productId, @PathVariable Long reviewId)
     {
         Optional<Review> optionalReview = reviewService.findProductReview(reviewId);
         if(!optionalReview.isPresent())

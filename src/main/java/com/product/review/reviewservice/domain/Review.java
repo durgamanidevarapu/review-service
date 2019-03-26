@@ -12,16 +12,9 @@ public class Review {
     private String description;
     private String rating;
 
-    public int getProductId() {
-        return productId;
-    }
-
-    public void setProductId(int productId) {
-        this.productId = productId;
-    }
 
     @Column(name = "product_id")
-    private int productId;
+    private Long productId;
 
     public Long getId() {
         return id;
@@ -45,6 +38,14 @@ public class Review {
 
     public void setRating(String rating) {
         this.rating = rating;
+    }
+
+    public Long getProductId() {
+        return productId;
+    }
+
+    public void setProductId(Long productId) {
+        this.productId = productId;
     }
 
 
