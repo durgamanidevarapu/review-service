@@ -67,14 +67,15 @@ public class ReviewServiceController {
 
     private Review updateReviewEntity(ReviewDto reviewDto,Review review){
 
+
+        if(StringUtils.isEmpty(reviewDto.getDescription())){
+            reviewDto.setDescription(review.getDescription());
+        }
+        if(StringUtils.isEmpty(reviewDto.getRating())){
+            reviewDto.setRating(review.getDescription());
+        }
         Review reviewEntity = convertToEntity(reviewDto);
         reviewEntity.setId(review.getId());
-        if(StringUtils.isEmpty(reviewEntity.getDescription())){
-            reviewEntity.setDescription(review.getDescription());
-        }
-        if(StringUtils.isEmpty(review.getRating())){
-            reviewEntity.setRating(review.getDescription());
-        }
         return reviewEntity;
     }
 
