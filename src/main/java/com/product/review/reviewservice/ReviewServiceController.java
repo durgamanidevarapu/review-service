@@ -23,8 +23,8 @@ import java.util.Optional;
 public class ReviewServiceController {
 
     @Autowired
-    ReviewService reviewService;
-    Logger log = LoggerFactory.getLogger(ReviewServiceController.class);
+    private ReviewService reviewService;
+    private Logger log = LoggerFactory.getLogger(ReviewServiceController.class);
     ModelMapper modelMapper = new ModelMapper();
 
     @PostMapping("/products/{productId}/reviews")
@@ -78,8 +78,8 @@ public class ReviewServiceController {
         return reviewEntity;
     }
 
-private Review convertToEntity(ReviewDto reviewDto){
-          return modelMapper.map(reviewDto,Review.class);
-}
+    private Review convertToEntity(ReviewDto reviewDto){
+        return modelMapper.map(reviewDto,Review.class);
+    }
 
 }

@@ -18,9 +18,9 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Override
-    public Iterable<Review> findProductReviews(int product_id) {
+    public Iterable<Review> findProductReviews(int productId) {
 
-        return reviewServiceDao.findByProductId(product_id);
+        return reviewServiceDao.findByProductId(productId);
     }
 
     @Override
