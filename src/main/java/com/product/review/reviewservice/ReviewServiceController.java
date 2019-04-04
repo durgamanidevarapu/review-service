@@ -60,8 +60,8 @@ public class ReviewServiceController {
             return ResponseEntity.noContent().build();
         Review review = updateReviewEntity(reviewDto,optionalReview.get());
         review.setProductId(productId);
-        Review updatedReview = reviewService.addProdcutReview(review);
-        log.info("updated review detials:{}",review.toString());
+        reviewService.addProdcutReview(review);
+        log.info("updated review detials:{}",review);
         return ResponseEntity.noContent().build();
     }
 
